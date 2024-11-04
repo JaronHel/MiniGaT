@@ -23,6 +23,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
 
   & .passmsg {
+    font-family: $font;
     color: $text-color;
     font-size: 20px;
     margin-bottom: 30px;
