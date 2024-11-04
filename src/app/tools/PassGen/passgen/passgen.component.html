@@ -1,0 +1,8 @@
+<div class="main">
+  <span class="passmsg" [innerHTML]="passwordEl"></span>
+  <div class="inputs">
+    <input type="number" placeholder="Length" [(ngModel)]="inputLength" />
+    <button (click)="generate()">Generate</button>
+    <button (click)="copyToClipboard()"><mat-icon>content_copy</mat-icon></button>
+  </div>
+</div>

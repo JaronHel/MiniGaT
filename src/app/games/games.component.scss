@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+mat-grid-tile {
+    outline: 3px solid rgba($color: $primary-color, $alpha: 0.6);
+    transition: background-color .3s;
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    font-family: $font;
+    background-color: $background-color-transparent;
+
+    &:hover {
+        background-color: rgba($color: $primary-color, $alpha: 0.1);
+        cursor: pointer;
+    }
+}

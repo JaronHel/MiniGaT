@@ -1,0 +1,182 @@
+@import '../variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+@mixin button-styles {
+  background: none;
+  border: none;
+  color: $text-color;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.button-hover {
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+header {
+  @include flex-center;
+  padding: 18px;
+  background-color: $background-color-transparent;
+  color: $text-color;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid rgba($color: $primary-color, $alpha: 0.6);
+
+  .logo {
+    margin-right: 30px;
+    cursor: pointer;
+
+    h1 {
+      font-family: $font;
+      margin: 0;
+      font-size: 27px;
+
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $button-hover-color;
+        }
+      }
+    }
+  }
+
+  .menu {
+    position: relative;
+    margin-right: 20px;
+
+    .dropdown-button {
+      @include button-styles;
+      @include flex-center;
+
+      mat-icon {
+        font-size: 25px;
+        transition: color 0.1s;
+
+        &.active {
+          color: $primary-color;
+        }
+      }
+
+      @extend .button-hover;
+    }
+
+    .dropdown-menu {
+      font-family: $font;
+      position: absolute;
+      top: 175%;
+      left: 15px;
+      background-color: $background-color-transparent;
+      padding: 8px 0;
+      list-style: none;
+      z-index: 1000;
+      border-radius: 0 0 4px 4px;
+      border-bottom: 3px solid $primary-color;
+
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease;
+      visibility: hidden;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      li {
+        padding: 8px 16px;
+        cursor: pointer;
+
+        a {
+          text-decoration: none;
+          color: $text-color;
+          display: block;
+          transition: color 0.3s;
+
+          @extend .button-hover;
+        }
+      }
+    }
+  }
+
+  .search-login {
+    @include flex-center;
+    margin-left: auto;
+    gap: 20px;
+
+    .search {
+      @include flex-center;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      background-color: $icon-background-color;
+
+      input {
+        font-family: $font;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        background-color: $input-background-color;
+        color: $text-color;
+        outline: none;
+        width: 250px;
+
+        &::placeholder {
+          color: $text-color-light;
+        }
+      }
+    }
+
+    .search-button {
+      @include button-styles;
+      @include flex-center;
+      transition: color 0.3s;
+
+      .material-icons {
+        font-size: 25px;
+        line-height: 1;
+      }
+
+      @extend .button-hover;
+    }
+
+    a {
+      text-decoration: none;
+
+      .login-button {
+        font-family: $font;
+        @include flex-center;
+        gap: 5px;
+        padding: 5px 10px 5px 5px;
+        background-color: $primary-color;
+        color: black;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: $button-hover-color;
+        }
+
+        mat-icon {
+          font-size: 20px;
+          padding-top: 2px;
+        }
+      }
+    }
+  }
+}

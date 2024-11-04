@@ -1,0 +1,82 @@
+@import '../../../variables.scss';
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  background-color: $background-color-transparent;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  width: 350px;
+  border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
+}
+
+h1 {
+  font-family: $font;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+input[type="number"] {
+  width: 80%;
+  padding: 12px;
+  border: 2px solid $primary-color;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+  background-color: $background-color-transparent;
+  color: white;
+  transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+  border-color: $button-hover-color;
+  outline: none;
+}
+
+button {
+  font-family: $font;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: $button-hover-color;
+  transform: scale(1.05);
+}
+
+span {
+  font-family: $font;
+  display: block;
+  margin-top: 15px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+#tries {
+  font-family: $font;
+  color: rgb(255, 0, 0);
+}
