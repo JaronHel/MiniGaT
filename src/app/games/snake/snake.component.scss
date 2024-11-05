@@ -1,0 +1,21 @@
+@import "../../../variables.scss";
+
+.field {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    background-color: $background-color-transparent;
+    border-radius: 15px;
+    height: 750px;
+    width: 750px;
+    border: solid rgba($color: $primary-color, $alpha: 0.6);
+
+    .snake {
+        height: 50px;
+        width: 150px;
+        background-color: green;
+        border-radius: 14px; 
+        position: absolute;
+    }
+}

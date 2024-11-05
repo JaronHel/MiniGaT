@@ -6,10 +6,11 @@ import { ToolsComponent } from './tools/tools.component';
 import { PassgenComponent } from './tools/PassGen/passgen/passgen.component';
 import { MemoryComponent } from './games/memory/memory.component';
 import { HolComponent } from './games/higherorlower/hol.component';
+import { SnakeComponent } from './games/snake/snake.component';
 
 export const routes: Routes = [
   {
-    path: '', redirectTo: '/home', pathMatch: 'full'
+    path: '', redirectTo: '/home',  pathMatch: 'full'
   },
   {
     path: 'home',
@@ -34,6 +35,10 @@ export const routes: Routes = [
   {
     path: 'games/higherorlower',
     component: HolComponent,
+  },
+  {
+    path: 'games/snake',
+    component: SnakeComponent,
   },
   {
     path: 'tools/passgen',

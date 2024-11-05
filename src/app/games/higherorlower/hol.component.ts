@@ -49,7 +49,7 @@ export class HolComponent {
       } else {
         this.message = "Invalid Number! (1-100)";
       }
-    } else {
+    } else if (this.tries <= 0) {
       this.message = `You got no more tries :(<br>Number was: ${this.numberToGuess}`;
       this.tries = 0;
     }
