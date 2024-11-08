@@ -1,7 +1,14 @@
 <div class="main">
-  <span class="passmsg" [innerHTML]="passwordEl"></span>
+  <span class="passmsg">{{ password }}</span>
   <div class="inputs">
-    <input type="number" placeholder="Length" [(ngModel)]="inputLength" />
+    <input 
+      type="number" 
+      placeholder="Length" 
+      [(ngModel)]="inputLength" 
+      min="6" 
+      max="30" 
+      (input)="validateInputLength()" 
+    />
     <button (click)="generate()">Generate</button>
     <button (click)="copyToClipboard()"><mat-icon>content_copy</mat-icon></button>
   </div>

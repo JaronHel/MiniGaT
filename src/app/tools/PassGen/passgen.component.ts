@@ -12,7 +12,6 @@ import { MatIcon } from '@angular/material/icon';
 export class PassgenComponent {
   password: string = '';
   inputLength: number = 12;
-  passwordEl: string = 'Generate a Password';
 
   generatePassword(length: number): string {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&()_+~`|}{[]:;?><,./-=';
@@ -21,12 +20,27 @@ export class PassgenComponent {
       const randomIndex = Math.floor(Math.random() * characters.length);
       password += characters[randomIndex];
     }
-    this.passwordEl = password;
     return password;
   }
 
   generate(): void {
-    this.password = this.generatePassword(this.inputLength);
+    console.log('inputLength:', this.inputLength);
+
+    if (this.inputLength > 30) {
+      this.password = "The max password length is 30! You won't need any longer one!";
+    } else if (this.inputLength < 1) {
+      this.password = "Password length must be at least 1!";
+    } else {
+      this.password = this.generatePassword(this.inputLength);
+    }
+  }
+
+  validateInputLength(): void {
+    if (this.inputLength < 6) {
+      this.inputLength = 6;
+    } else if (this.inputLength > 30) {
+      this.inputLength = 30;
+    }
   }
 
   copyToClipboard(): void {
