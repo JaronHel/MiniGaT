@@ -13,6 +13,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 How to build:
+- Delete old `docs` folder
 - `ng b --output-path docs --base-href /MiniGaT/`
 - Copy the files in `docs/browser` into `docs` and delete `browser` folder
 - `git add .`
