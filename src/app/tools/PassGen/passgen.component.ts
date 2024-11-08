@@ -15,24 +15,29 @@ export class PassgenComponent {
 
   generatePassword(length: number): string {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&()_+~`|}{[]:;?><,./-=';
+
+    const lowercase = 'abcdefghijklmnopqrstuvwxyz';
+    const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const digits = '0123456789';
+    const specialChars = '!@#$%^&()_+~`|}{[]:;?><,./-=';
+
     let password = '';
-    for (let i = 0; i < length; i++) {
+    password += lowercase.charAt(Math.floor(Math.random() * lowercase.length));
+    password += uppercase.charAt(Math.floor(Math.random() * uppercase.length));
+    password += digits.charAt(Math.floor(Math.random() * digits.length));
+    password += specialChars.charAt(Math.floor(Math.random() * specialChars.length));
+
+    for (let i = 4; i < length; i++) {
       const randomIndex = Math.floor(Math.random() * characters.length);
       password += characters[randomIndex];
     }
+
     return password;
   }
 
   generate(): void {
-    console.log('inputLength:', this.inputLength);
-
-    if (this.inputLength > 30) {
-      this.password = "The max password length is 30! You won't need any longer one!";
-    } else if (this.inputLength < 1) {
-      this.password = "Password length must be at least 1!";
-    } else {
-      this.password = this.generatePassword(this.inputLength);
-    }
+    this.validateInputLength();
+    this.password = this.generatePassword(this.inputLength);
   }
 
   validateInputLength(): void {
@@ -44,6 +49,9 @@ export class PassgenComponent {
   }
 
   copyToClipboard(): void {
-    navigator.clipboard.writeText(this.password);
+    navigator.clipboard.writeText(this.password).then(
+      () => alert('Password copied to clipboard!'),
+      (err) => alert('Failed to copy password: ' + err)
+    );
   }
 }
