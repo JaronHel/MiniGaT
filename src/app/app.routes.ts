@@ -3,7 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { GamesComponent } from './games/games.component';
 import { BlackjackComponent } from './games/blackjack/blackjack.component';
 import { ToolsComponent } from './tools/tools.component';
-import { PassgenComponent } from './tools/PassGen/passgen/passgen.component';
+import { PassgenComponent } from './tools/PassGen/passgen.component';
 import { MemoryComponent } from './games/memory/memory.component';
 import { HolComponent } from './games/higherorlower/hol.component';
 import { SnakeComponent } from './games/snake/snake.component';
