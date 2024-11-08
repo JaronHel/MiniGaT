@@ -12,10 +12,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-- 1. ng b --output-path docs --base-href /MiniGaT/
-- 2. git add .
-- 3. git commit -m "build"
-- 4. git push
+- ng b --output-path docs --base-href /MiniGaT/
+- git add .
+- git commit -m "build"
+- git push
 
 ## Running unit tests
 
