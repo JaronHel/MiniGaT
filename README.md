@@ -17,6 +17,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 - git add .
 - git commit -m "build"
 - git push
+ 
+-- !! If you encounter a fetch error use:
+- git fetch
+
 
 ## Running unit tests
 
