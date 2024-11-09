@@ -10,6 +10,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
   gap: 10px;
   top: 50%;
   left: 50%;
