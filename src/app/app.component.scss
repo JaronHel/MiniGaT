@@ -24,6 +24,10 @@
   }
 }
 
+main {
+  flex-grow: 1;
+}
+
 header {
   @include flex-center;
   padding: 18px;
@@ -178,5 +182,43 @@ header {
         }
       }
     }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba($color: $primary-color, $alpha: 0.6);
+  color: white;
+  height: auto;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  flex: 1;
+  font-family: $font;
+}
+
+.github {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  line-height: 0;
+
+  & .github-logo {
+    max-width: 50px;
+    height: auto;
+  }
+
+  & .github-mark {
+    max-width: 25px;
+    height: auto;
   }
 }
