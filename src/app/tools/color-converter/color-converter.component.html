@@ -1,0 +1,14 @@
+<div class="main">
+  <div class="inputs">
+    <input type="number" placeholder="Red" min="0" max="255" [(ngModel)]="red" (ngModelChange)="updateColor()">
+    <input type="number" placeholder="Green" min="0" max="255" [(ngModel)]="green" (ngModelChange)="updateColor()">
+    <input type="number" placeholder="Blue" min="0" max="255" [(ngModel)]="blue" (ngModelChange)="updateColor()">
+    <div class="color" [style.background]="rgbColor" (click)="copyRgb()"></div>
+  </div>
+  <div class="hexa">
+    <input [(ngModel)]="hexa" (ngModelChange)="toRgb()" class="hexa-input">
+    <button class="copy" (click)="copyHex()">
+      <mat-icon>content_copy</mat-icon>
+    </button>
+  </div>
+</div>

@@ -13,6 +13,10 @@ export class PassgenComponent {
   password: string = '';
   inputLength: number = 12;
 
+  ngOnInit(): void {
+    this.generate();
+  }
+
   generatePassword(length: number): string {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&()_+~`|}{[]:;?><,./-=';
 
@@ -49,9 +53,6 @@ export class PassgenComponent {
   }
 
   copyToClipboard(): void {
-    navigator.clipboard.writeText(this.password).then(
-      () => alert('Password copied to clipboard!'),
-      (err) => alert('Failed to copy password: ' + err)
-    );
+    navigator.clipboard.writeText(this.password);
   }
 }
