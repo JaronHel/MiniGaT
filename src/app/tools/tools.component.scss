@@ -1,8 +1,8 @@
 @import '../../variables.scss';
 
 mat-grid-tile {
-    outline: 3px solid rgba($color: $primary-color, $alpha: 0.6);
-    transition: background-color .3s;
+    box-shadow: 0 0 5px 0 rgba($color: $primary-color, $alpha: 0.6);
+    transition: background-color .2s;
     text-decoration: none;
     color: #fff;
     font-size: 30px;

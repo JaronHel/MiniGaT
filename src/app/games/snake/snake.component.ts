@@ -71,9 +71,9 @@ export class SnakeComponent implements OnInit {
   checkCollision(): boolean {
     if (
         this.snakePositionX < 0 ||
-        this.snakePositionX + 150 > this.fieldSize ||
+        this.snakePositionX + 250 > this.fieldSize ||
         this.snakePositionY < 0 ||
-        this.snakePositionY + 50 > this.fieldSize
+        this.snakePositionY + 200 > this.fieldSize
     ) {
         return true;
     }
