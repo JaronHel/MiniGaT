@@ -34,23 +34,27 @@ export class HolComponent {
   }
 
   public onCheck(): void {
-    if (this.tries > 0) {
+    if (this.tries > 1) {
       if (this.inputValue !== null && this.inputValue >= 1 && this.inputValue <= 100) {
         if (this.inputValue > this.numberToGuess) {
           this.message = "Lower";
+          this.tries--;
+          console.log(this.tries)
         } else if (this.inputValue < this.numberToGuess) {
           this.message = "Higher";
+          this.tries--;
+          console.log(this.tries)
         } else {
           this.message = `You guessed the right number!<br>(${this.numberToGuess})`;
         }
-        this.tries--;
       } else if (this.inputValue === null) {
         this.message = "Can't check an empty field!";
       } else {
         this.message = "Invalid Number! (1-100)";
       }
-    } else if (this.tries <= 0) {
-      this.message = `You got no more tries :(<br>Number was: ${this.numberToGuess}`;
+    } else {
+      console.log("test")
+      this.message = `You got no more tries :( Number was: ${this.numberToGuess}`;
       this.tries = 0;
     }
   }
