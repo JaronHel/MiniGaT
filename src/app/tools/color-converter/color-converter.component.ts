@@ -10,7 +10,7 @@ import { MatIcon } from '@angular/material/icon';
     MatIcon
   ],
   templateUrl: './color-converter.component.html',
-  styleUrl: './color-converter.component.scss'
+  styleUrls: ['./color-converter.component.scss']
 })
 export class ColorConverterComponent implements OnInit {
   red: number = 0;
@@ -18,6 +18,7 @@ export class ColorConverterComponent implements OnInit {
   blue: number = 0;
   hexa: string = '';
   rgbColor: string = 'rgb(0, 0, 0)';
+  selectedColor: string = '#000000';
 
   ngOnInit(): void {
     this.updateColor();
@@ -38,8 +39,9 @@ export class ColorConverterComponent implements OnInit {
     this.blue = this.clampValue(this.blue);
 
     this.converted();
-    
     this.rgbColor = `rgb(${this.red}, ${this.green}, ${this.blue})`;
+
+    this.selectedColor = this.converted();
   }
 
   private clampValue(value: number): number {
@@ -67,5 +69,20 @@ export class ColorConverterComponent implements OnInit {
   
   copyHex(): void {
     navigator.clipboard.writeText(`#${this.toHex(this.red)}${this.toHex(this.green)}${this.toHex(this.blue)}`);
+  }
+
+  onColorPickerChange(): void {
+    if (this.selectedColor.length === 7 && this.selectedColor[0] === '#') {
+      const r = parseInt(this.selectedColor.slice(1, 3), 16);
+      const g = parseInt(this.selectedColor.slice(3, 5), 16);
+      const b = parseInt(this.selectedColor.slice(5, 7), 16);
+
+      if (!isNaN(r) && !isNaN(g) && !isNaN(b)) {
+        this.red = r;
+        this.green = g;
+        this.blue = b;
+        this.updateColor();
+      }
+    }
   }
 }

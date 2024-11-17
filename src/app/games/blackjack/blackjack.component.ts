@@ -20,6 +20,7 @@ export class BlackjackComponent {
   deck: string[] = [];
   dealerHand: string[] = [];
   playerHand: string[] = [];
+  money: number = 1000;
   playerHasStood = false;
   message = '';
 
@@ -166,6 +167,14 @@ export class BlackjackComponent {
     } else {
       this.updateUI();
     }
+  }
+
+  public onDouble() {
+
+  }
+
+  public onSplit() {
+
   }
 
   public onStand() {

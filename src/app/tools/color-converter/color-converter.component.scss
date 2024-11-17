@@ -10,7 +10,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -22,45 +22,15 @@ input[type=number]::-webkit-outer-spin-button {
   width: 600px;
   border-bottom: solid rgba($primary-color, 0.6);
 
-  & .inputs {
+  & .inputs, & .hexa {
     display: flex;
-    gap: 15px;
-    justify-content: center;
-
-    & input[type="number"] {
-      width: 150px;
-      padding: 12px;
-      border: 2px solid $primary-color;
-      border-radius: 10px;
-      font-size: 18px;
-      text-align: center;
-      background-color: $background-color-transparent;
-      color: white;
-      transition: border-color 0.3s;
-
-      &:focus {
-        border-color: $button-hover-color;
-        outline: none;
-      }
-    }
-
-    & .color {
-      width: 50px;
-      height: 50px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-  }
-
-  & .hexa {
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
-    gap: 10px;
+    width: 100%;
+    gap: 15px;
 
-    & .hexa-input {
-      width: 150px;
+    & input[type="number"], & .hexa-input {
+      width: 140px;
       padding: 12px;
       border: 2px solid $primary-color;
       border-radius: 10px;
@@ -82,17 +52,28 @@ input[type=number]::-webkit-outer-spin-button {
       color: white;
       border: none;
       border-radius: 10px;
-      padding: 12px 0;
       cursor: pointer;
       font-size: 16px;
       transition: background-color 0.3s, transform 0.2s;
       width: 50px;
       height: 50px;
-      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       &:hover {
         background-color: $button-hover-color;
         transform: scale(1.05);
       }
+    }
+
+    & .color {
+      width: 380px;
+      height: 55px;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+      background-color: transparent;
     }
   }
 }
