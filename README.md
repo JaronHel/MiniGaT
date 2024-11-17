@@ -1,4 +1,4 @@
-# MiniGaT
+## MiniGaT Page
 
 `https://jaronhel.github.io/MiniGaT/`
 
