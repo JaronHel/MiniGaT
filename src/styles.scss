@@ -43,8 +43,7 @@ html, body {
 	flex-direction: column;
 	overflow: hidden;
   }
-  
-  // Hintergrund-Element
+
   .background {
 	position: fixed;
 	top: 0;
@@ -55,7 +54,6 @@ html, body {
 	filter: brightness(0.4);
   }
   
-  // App-Root-Inhalt
   .content {
 	display: flex;
 	flex-direction: column;
