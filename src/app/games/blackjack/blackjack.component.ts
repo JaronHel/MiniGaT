@@ -48,18 +48,18 @@ export class BlackjackComponent {
     this.dealerHandHidden = true;
     this.inputBetReadonly = true;
     
-    if (this.money >= this.bet && this.bet > 0) {
-      this.money = this.money - this.bet;
-    }
-    else {
-      this.bet = 0;
-    }
-
     if ((this.bet * 2) > this.money || this.bet <= 0) {
       this.btnDoubleDisabled = true;
     }
     else {
       this.btnDoubleDisabled = false;
+    }
+
+    if (this.money >= this.bet && this.bet > 0) {
+      this.money = this.money - this.bet;
+    }
+    else {
+      this.bet = 0;
     }
 
     this.createDeck();
