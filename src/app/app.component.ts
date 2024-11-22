@@ -19,6 +19,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 })
 
 export class AppComponent {
+  LoginDisabled = true;
   isMenuOpen = false;
 
   constructor(private eRef: ElementRef, private router: Router) {}

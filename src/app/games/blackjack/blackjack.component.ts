@@ -1,11 +1,13 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    FormsModule
   ],
   templateUrl: './blackjack.component.html',
   styleUrl: './blackjack.component.scss'
@@ -21,13 +23,18 @@ export class BlackjackComponent {
   dealerHand: string[] = [];
   playerHand: string[] = [];
   money: number = 1000;
+  bet: number = 0;
   playerHasStood = false;
+  splitPossible = false;
   message = '';
 
   btnNewDisabled = false;
   btnHitDisabled = true;
   btnStandDisabled = true;
+  btnDoubleDisabled = true;
   dealerHandHidden = true;
+
+  inputBetReadonly = false;
 
   private startOfGame() {
     this.deck = [];
@@ -39,6 +46,21 @@ export class BlackjackComponent {
     this.btnHitDisabled = false;
     this.btnStandDisabled = false;
     this.dealerHandHidden = true;
+    this.inputBetReadonly = true;
+    
+    if (this.money >= this.bet && this.bet > 0) {
+      this.money = this.money - this.bet;
+    }
+    else {
+      this.bet = 0;
+    }
+
+    if ((this.bet * 2) > this.money || this.bet <= 0) {
+      this.btnDoubleDisabled = true;
+    }
+    else {
+      this.btnDoubleDisabled = false;
+    }
 
     this.createDeck();
     this.shuffleDeck();
@@ -59,7 +81,9 @@ export class BlackjackComponent {
     this.btnNewDisabled = false;
     this.btnHitDisabled = true;
     this.btnStandDisabled = true;
+    this.btnDoubleDisabled = true;
     this.dealerHandHidden = false;
+    this.inputBetReadonly = false;
   }
 
   private createDeck() {
@@ -114,6 +138,7 @@ export class BlackjackComponent {
 
     if (dealerValue > 21) {
       this.message = "Dealer lost due to overdrawing! YOU win!";
+      this.money += this.bet * 2;
       this.endOfGame();
       return true;
     } else if (playerValue > 21) {
@@ -126,6 +151,7 @@ export class BlackjackComponent {
       return true;
     } else if (playerValue > dealerValue) {
       this.message = "You win!";
+      this.money += this.bet * 2;
       this.endOfGame();
       return true;
     } else if (playerValue === dealerValue && dealerValue > 16) {
@@ -150,6 +176,7 @@ export class BlackjackComponent {
       return true;
     } else if (playerBlackjack) {
       this.message = "A Blackjack! YOU win!";
+      this.money += this.bet * 1.5;
       this.endOfGame();
       return true;
     }
@@ -161,6 +188,9 @@ export class BlackjackComponent {
   }
 
   public onHit() {
+    if (this.playerHand.length >= 2) {
+      this.btnDoubleDisabled = true;
+    }
     this.playerHand.push(this.takeCard());
     if (this.calculateHandValue(this.playerHand) > 21) {
       this.checkWinner();
@@ -170,11 +200,10 @@ export class BlackjackComponent {
   }
 
   public onDouble() {
-
-  }
-
-  public onSplit() {
-
+    this.btnDoubleDisabled = true;
+    this.bet = this.bet * 2;
+    this.money = this.money - (this.bet / 2);
+    this.onHit();
   }
 
   public onStand() {

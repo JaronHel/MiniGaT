@@ -1,18 +1,57 @@
 @import '../../../variables.scss';
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .main {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  left: 50%;
-  transform: translate(-50%, 180%);
+  @include position;
+  color: #fff;
+  font-family: $font;
+  width: 700px;
+  border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
+  background-color: $background-color-transparent;
+  border-radius: 15px;
+  padding: 30px;
+
+  & .money {
+    font-size: 14px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  & .bet {
+    & input[type="number"] {
+      font-family: $font;
+      font-size: 14px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: solid rgba($color: $primary-color, $alpha: 0.6);
+      border-radius: 15px;
+      width: 300px;
+      color: #fff;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+    
+    input[type="number"]:focus {
+      border-color: $button-hover-color;
+      outline: none;
+    }
+  }
 
   & .hidden {
     display: none;
   }
   
-  & #actions {
+  & .actions {
     display: flex;
     gap: 20px;
     margin-top: 20px;
@@ -42,22 +81,21 @@
     }
   }
   
-  & #game {
+  & .game {
     position: relative;
     text-align: center;
     margin-top: 20px;
   }
   
-  & #cardValues {
+  & .cardValues {
     font-family: $font;
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin: 20px 0;
     color: #fff;
   
-    #dealerHand,
-    #playerHand {
+    .dealerHand,
+    .playerHand {
       font-size: 14px;
       padding: 10px;
       background-color: rgba(255, 255, 255, 0.1);
@@ -68,20 +106,11 @@
       flex: 1;
     }
   }
-  
-  & #messages {
-    position: absolute;
-    font-family: $font;
-    text-align: center;
+
+  & .messages {
     margin-top: 20px;
     font-size: 20px;
-    left: 50%;
-    transform: translate(-50%, 0);
-  
-    & #msgWinner {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #ffcc00;
-    }
+    font-weight: bold;
+    color: #ffcc00;
   }
 }

@@ -24,12 +24,9 @@
   }
 }
 
-main {
-  min-height: 100vh;
-}
-
 header {
   @include flex-center;
+  flex-shrink: 0;
   padding: 18px;
   background-color: $background-color-transparent;
   color: $text-color;
@@ -176,6 +173,11 @@ header {
           background-color: $button-hover-color;
         }
 
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+
         mat-icon {
           font-size: 20px;
           padding-top: 2px;
@@ -183,6 +185,11 @@ header {
       }
     }
   }
+}
+
+main {
+  flex-grow: 1;
+  min-height: 100vh;
 }
 
 footer {
@@ -194,35 +201,35 @@ footer {
   color: white;
   width: 100%;
   height: 45px;
-  position: absolute;
+  position: sticky;
   bottom: 0;
   flex-shrink: 0;
-}
 
-.text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  color: white;
-  flex: 1;
-  font-family: $font;
-}
-
-.github {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  cursor: pointer;
-  line-height: 0;
-
-  .github-logo {
-    max-width: 50px;
-    height: auto;
+  & .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    flex: 1;
+    font-family: $font;
   }
-
-  .github-mark {
-    max-width: 25px;
-    height: auto;
+  
+  & .github {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+    line-height: 0;
+  
+    .github-logo {
+      max-width: 50px;
+      height: auto;
+    }
+  
+    .github-mark {
+      max-width: 25px;
+      height: auto;
+    }
   }
 }

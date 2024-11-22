@@ -1,47 +1,61 @@
 @import '../../../variables.scss';
 
-#cards {
-  display: grid;
-  transform: translate(0, 50%);
-  grid-template-columns: repeat(6, 1fr);
+.main {
+  @include position;
   gap: 30px;
-  justify-items: center;
-}
 
-button, #reset {
-  color: $text-color;
-  border: none;
-  background-color: $primary-color;
-  cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s, ease-in 0.1s;
-  font-size: 20px;
-  width: 100px;
-  height: 100px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $background-color-transparent;
-  border-radius: 15px;
-  border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
-  padding-left: -50px;
-}
+  & #cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
 
-.hidden {
-  font-size: 0;
-  transition: ease-out 0.1s;
-}
+    & button {
+      color: $text-color;
+      border: none;
+      background-color: $primary-color;
+      cursor: pointer;
+      transition: transform 0.3s, background-color .2s, ease-in 0.1s;
+      font-size: 18px;
+      width: 100px;
+      height: 100px;
+      font-weight: bold;
+      background-color: $background-color-transparent;
+      border-radius: 15px;
+      border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
 
-#reset {
-  margin-top: -22%;
-  width: 20%;
-  font-size: 30px;
-  border-radius: 5px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+      &:hover {
+        background-color: rgba($color: $primary-color, $alpha: 0.1);
+      }
+    }
+  }
+  
+  & .hidden {
+    font-size: 0 !important;
+    transition: ease-out 0.1s;
+  }
+  
+  & #reset {
+    color: $text-color;
+    border: none;
+    background-color: $primary-color;
+    cursor: pointer;
+    transition: background-color .2s;
+    font-size: 20px;
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    background-color: $background-color-transparent;
+    border-radius: 15px;
+    border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
+    width: 20%;
+    font-size: 30px;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
-button:hover, #reset:hover {
-  background-color: $button-hover-color;
+    &:hover {
+      background-color: rgba($color: $primary-color, $alpha: 0.1);
+    }
+  }
 }

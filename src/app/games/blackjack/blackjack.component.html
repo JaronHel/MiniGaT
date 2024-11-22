@@ -1,25 +1,34 @@
 <div class="main">
-    <div id="actions">
+
+    <div class="money">
+        <span>Money: {{ money }}</span>
+    </div>
+
+    <div class="bet">
+        <input type="number" placeholder="Bet" [(ngModel)]="bet" [readonly]="inputBetReadonly">
+    </div>
+
+    <div class="actions">
         <button (click)="onHit()" [disabled]="btnHitDisabled">Hit</button>
         <button (click)="onStand()" [disabled]="btnStandDisabled">Stand</button>
+        <button (click)="onDouble()" [disabled]="btnDoubleDisabled">Doulbe</button>
         <button (click)="onNewGame()" [disabled]="btnNewDisabled">New Game</button>
     </div>
     
-    <div id="game">
-        <div id="cardValues">
-            <div id="dealerHand">
+    <div class="game">
+        <div class="cardValues">
+            <div class="dealerHand">
                 Dealer:
                 <span *ngIf="dealerHandHidden">?, {{ dealerHand[1] }}</span>
                 <span *ngIf="!dealerHandHidden">{{ dealerHand.join(', ') }} ({{ calculateHandValue(dealerHand) }})</span>
             </div>
             
-            <div id="playerHand">
+            <div class="playerHand">
                 You: {{ playerHand.join(', ') }} ({{ calculateHandValue(playerHand) }})
             </div>
         </div>
-    
-        <div id="messages">
-            <div id="msgWinner">{{ message }}</div>
-        </div>
+
+        <div class="messages">{{ message }}</div>
     </div>
+
 </div>
