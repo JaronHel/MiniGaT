@@ -2,11 +2,10 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-snake',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './snake.component.html',
-  styleUrls: ['./snake.component.scss'] // Hier sollte styleUrls sein
+    selector: 'app-snake',
+    imports: [CommonModule],
+    templateUrl: './snake.component.html',
+    styleUrls: ['./snake.component.scss']
 })
 export class SnakeComponent implements OnInit {
   snakePositionX: number = 0;

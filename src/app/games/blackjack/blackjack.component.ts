@@ -3,14 +3,13 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    NgIf,
-    FormsModule
-  ],
-  templateUrl: './blackjack.component.html',
-  styleUrl: './blackjack.component.scss'
+    selector: 'app-home',
+    imports: [
+        NgIf,
+        FormsModule
+    ],
+    templateUrl: './blackjack.component.html',
+    styleUrl: './blackjack.component.scss'
 })
 export class BlackjackComponent {
   cardValues: string[] = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "K", "Q", "A"];

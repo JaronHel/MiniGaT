@@ -5,17 +5,16 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    MatIconModule,
-    MatMenuModule,
-    CommonModule,
-    RouterOutlet,
-    RouterLink
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    imports: [
+        MatIconModule,
+        MatMenuModule,
+        CommonModule,
+        RouterOutlet,
+        RouterLink
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 
 export class AppComponent {
@@ -30,11 +29,6 @@ export class AppComponent {
 
   linkClicked() {
     this.isMenuOpen = false;
-  }
-
-  goToGames() {
-    this.isMenuOpen = false;
-    this.router.navigate(['/games']);
   }
 
   @HostListener('document:click', ['$event'])

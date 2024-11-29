@@ -3,14 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-color-converter',
-  standalone: true,
-  imports: [
-    FormsModule,
-    MatIcon
-  ],
-  templateUrl: './color-converter.component.html',
-  styleUrls: ['./color-converter.component.scss']
+    selector: 'app-color-converter',
+    imports: [
+        FormsModule,
+        MatIcon
+    ],
+    templateUrl: './color-converter.component.html',
+    styleUrls: ['./color-converter.component.scss']
 })
 export class ColorConverterComponent implements OnInit {
   red: number = 0;

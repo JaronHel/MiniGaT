@@ -1,5 +1,9 @@
 @import '../../variables.scss';
 
+mat-grid-list {
+    height: calc(100vh - (45px + 73px));
+}
+
 mat-grid-tile {
     box-shadow: 0 0 5px 0 rgba($color: $primary-color, $alpha: 0.6);
     transition: background-color .2s;

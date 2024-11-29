@@ -3,14 +3,13 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-hol',
-  standalone: true,
-  imports: [
-    FormsModule,
-    NgIf
-  ],
-  templateUrl: './hol.component.html',
-  styleUrls: ['./hol.component.scss']
+    selector: 'app-hol',
+    imports: [
+        FormsModule,
+        NgIf
+    ],
+    templateUrl: './hol.component.html',
+    styleUrls: ['./hol.component.scss']
 })
 export class HolComponent {
   numberToGuess!: number;

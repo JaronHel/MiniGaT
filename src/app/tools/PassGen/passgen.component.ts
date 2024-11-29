@@ -3,11 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-passgen',
-  standalone: true,
-  imports: [FormsModule, MatIcon],
-  templateUrl: './passgen.component.html',
-  styleUrls: ['./passgen.component.scss']
+    selector: 'app-passgen',
+    imports: [FormsModule, MatIcon],
+    templateUrl: './passgen.component.html',
+    styleUrls: ['./passgen.component.scss']
 })
 export class PassgenComponent {
   password: string = '';

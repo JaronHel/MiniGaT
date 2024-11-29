@@ -1,10 +1,7 @@
 @import "../../../variables.scss";
 
 .field {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 15%);
+    @include position;
     background-color: $background-color-transparent;
     border-radius: 15px;
     height: 650px;
