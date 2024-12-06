@@ -155,6 +155,7 @@ export class BlackjackComponent {
       return true;
     } else if (playerValue === dealerValue && dealerValue > 16) {
       this.message = "It's a DRAW! No Winner!";
+      this.money += this.bet;
       this.endOfGame();
       return true;
     }
@@ -167,6 +168,7 @@ export class BlackjackComponent {
 
     if (dealerBlackjack && playerBlackjack) {
       this.message = "Two Blackjacks! It's a DRAW!";
+      this.money += this.bet;
       this.endOfGame();
       return true;
     } else if (dealerBlackjack) {
