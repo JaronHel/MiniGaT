@@ -177,7 +177,7 @@ export class BlackjackComponent {
       return true;
     } else if (playerBlackjack) {
       this.message = "A Blackjack! YOU win!";
-      this.money += this.bet * 1.5;
+      this.money += this.bet * 2.5;
       this.endOfGame();
       return true;
     }
