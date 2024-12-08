@@ -13,4 +13,10 @@
       <mat-icon>content_copy</mat-icon>
     </button>
   </div>
+  <div class="specs">
+    <mat-checkbox class="checkbox" [(ngModel)]="noCapital"><span class="checkboxLabel">Capital letters</span></mat-checkbox>
+    <mat-checkbox class="checkbox" [(ngModel)]="noLowercase"><span class="checkboxLabel">Lowercase letters</span></mat-checkbox>
+    <mat-checkbox class="checkbox" [(ngModel)]="noDigits"><span class="checkboxLabel">Digits</span></mat-checkbox>
+    <mat-checkbox class="checkbox" [(ngModel)]="noSpecial"><span class="checkboxLabel">Special characters</span></mat-checkbox>
+  </div>
 </div>

@@ -6,7 +6,6 @@ import { ToolsComponent } from './tools/tools.component';
 import { PassgenComponent } from './tools/PassGen/passgen.component';
 import { MemoryComponent } from './games/memory/memory.component';
 import { HolComponent } from './games/higherorlower/hol.component';
-import { SnakeComponent } from './games/snake/snake.component';
 import { ColorConverterComponent } from './tools/color-converter/color-converter.component';
 
 export const routes: Routes = [
@@ -36,10 +35,6 @@ export const routes: Routes = [
   {
     path: 'games/higherorlower',
     component: HolComponent,
-  },
-  {
-    path: 'games/snake',
-    component: SnakeComponent,
   },
   {
     path: 'tools/passgen',

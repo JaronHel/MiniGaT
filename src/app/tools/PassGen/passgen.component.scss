@@ -13,7 +13,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 15px;
   padding: 40px;
   text-align: center;
-  height: 100px;
+  height: 150px;
   width: 450px;
   border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
 
@@ -64,6 +64,16 @@ input[type=number]::-webkit-outer-spin-button {
         background-color: $button-hover-color;
         transform: scale(1.05);
       }
+    }
+  }
+
+  & .specs {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+
+    & .checkboxLabels {
+      color: #fff;
     }
   }
 }

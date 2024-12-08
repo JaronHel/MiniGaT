@@ -3,7 +3,7 @@ $background-color-transparent: rgba($color: $background-color, $alpha: 0.6);
 $primary-color: #49a1ca;
 $text-color: #ffffff;
 $text-color-light: #aaaaaa;
-$button-hover-color: darken($primary-color, 10%);
+$button-hover-color: color.adjust($primary-color, $lightness: -10%);
 $input-background-color: #303030;
 $border-color: #555555;
 $icon-background-color: #404040;

@@ -1,41 +1,79 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatCheckbox } from '@angular/material/checkbox';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
-    selector: 'app-passgen',
-    imports: [FormsModule, MatIcon],
-    templateUrl: './passgen.component.html',
-    styleUrls: ['./passgen.component.scss']
+  selector: 'app-passgen',
+  imports: [
+    FormsModule,
+    MatIcon,
+    MatCheckbox
+  ],
+  templateUrl: './passgen.component.html',
+  styleUrls: ['./passgen.component.scss']
 })
 export class PassgenComponent {
   password: string = '';
+  characters: string = '';
+  lowercase: string = 'abcdefghijklmnopqrstuvwxyz';
+  uppercase: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  specialChars: string = '!@#$%^&()_+~`|}{[]:;?><,./-=';
+  digits: string = '0123456789';
   inputLength: number = 12;
+  noCapital: boolean = false;
+  noLowercase: boolean = false;
+  noDigits: boolean = false;
+  noSpecial: boolean = false;
+  i: number = 4;
 
   ngOnInit(): void {
     this.generate();
   }
 
-  generatePassword(length: number): string {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&()_+~`|}{[]:;?><,./-=';
+  checkForSpecs(): void {
+    this.lowercase = this.noLowercase ? '' : 'abcdefghijklmnopqrstuvwxyz';
+    this.uppercase = this.noCapital ? '' : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    this.digits = this.noDigits ? '' : '0123456789';
+    this.specialChars = this.noSpecial ? '' : '!@#$%^&()_+~`|}{[]:;?><,./-=';
+    
+    this.characters = this.lowercase + this.uppercase + this.digits + this.specialChars;
 
-    const lowercase = 'abcdefghijklmnopqrstuvwxyz';
-    const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const digits = '0123456789';
-    const specialChars = '!@#$%^&()_+~`|}{[]:;?><,./-=';
+    this.i = [
+      this.noLowercase,
+      this.noCapital,
+      this.noDigits,
+      this.noSpecial
+    ].filter(flag => !flag).length;
+  }
+
+  generatePassword(length: number): string {
+    this.checkForSpecs();
 
     let password = '';
-    password += lowercase.charAt(Math.floor(Math.random() * lowercase.length));
-    password += uppercase.charAt(Math.floor(Math.random() * uppercase.length));
-    password += digits.charAt(Math.floor(Math.random() * digits.length));
-    password += specialChars.charAt(Math.floor(Math.random() * specialChars.length));
-
-    for (let i = 4; i < length; i++) {
-      const randomIndex = Math.floor(Math.random() * characters.length);
-      password += characters[randomIndex];
+    if (this.lowercase) {
+      password += this.lowercase.charAt(Math.floor(Math.random() * this.lowercase.length));
+    }
+    if (this.uppercase) {
+      password += this.uppercase.charAt(Math.floor(Math.random() * this.uppercase.length));
+    }
+    if (this.digits) {
+      password += this.digits.charAt(Math.floor(Math.random() * this.digits.length));
+    }
+    if (this.specialChars) {
+      password += this.specialChars.charAt(Math.floor(Math.random() * this.specialChars.length));
     }
 
-    return password;
+    for (let j = password.length; j < length; j++) {
+      const randomIndex = Math.floor(Math.random() * this.characters.length);
+      password += this.characters[randomIndex];
+    }
+
+    if (this.noLowercase && this.noCapital && this.noDigits && this.noSpecial) {
+      password = '';
+    }
+
+    return password.split('').sort(() => Math.random() - 0.5).join('');
   }
 
   generate(): void {
