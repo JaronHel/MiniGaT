@@ -7,6 +7,7 @@ import { PassgenComponent } from './tools/PassGen/passgen.component';
 import { MemoryComponent } from './games/memory/memory.component';
 import { HolComponent } from './games/higherorlower/hol.component';
 import { ColorConverterComponent } from './tools/color-converter/color-converter.component';
+import { QRGenComponent } from './tools/QRGen/qrgen.component';
 
 export const routes: Routes = [
   {
@@ -43,5 +44,9 @@ export const routes: Routes = [
   {
     path: 'tools/colorconverter',
     component: ColorConverterComponent,
+  },
+  {
+    path: 'tools/qrgen',
+    component: QRGenComponent,
   }
 ];

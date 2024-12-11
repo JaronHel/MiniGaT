@@ -1,0 +1,21 @@
+<div class="main">
+  <div class="content">
+    <div class="qrcodeImage">
+      <qrcode
+        [qrdata]="link"
+        [allowEmptyString]="true"
+        [cssClass]="'center'"
+        [colorDark]="'#000000ff'"
+        [colorLight]="'#ffffffff'"
+        [elementType]="'canvas'"
+        [errorCorrectionLevel]="'M'"
+        [scale]="1"
+        [width]="300"
+      ></qrcode>
+    </div>
+
+    <div class="linkInput">
+      <input type="url" [(ngModel)]="link">
+    </div>
+  </div>
+</div>
