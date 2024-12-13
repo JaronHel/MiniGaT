@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="main__money">
+    <span>Money: {{ money }}</span>
+  </div>
+
+  <div class="main__input">
+    <button (click)="onSpin()" [disabled]="btnSpinDisabled">! SPIN !</button>
+  </div>
+
+  <div class="main__display">
+    <div class="main__raw main__raw1">
+      <span>{{ raw1 }}</span>
+    </div>
+
+    <div class="main__raw main__raw2">
+      <span>{{ raw2 }}</span>
+    </div>
+
+    <div class="main__raw main__raw3">
+      <span>{{ raw3 }}</span>
+    </div>
+  </div>
+</div>

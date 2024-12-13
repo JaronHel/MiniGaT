@@ -1,0 +1,77 @@
+@import '../../../variables.scss';
+
+@keyframes spin {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(720deg); }
+  100% { transform: rotateX(1080deg); }
+}
+
+.main {
+  @include position;
+  color: #fff;
+  font-family: $font;
+  width: 80%;
+  max-width: 600px;
+  border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
+  background-color: $background-color-transparent;
+  border-radius: 15px;
+  padding: 30px;
+
+  &__money {
+    font-size: 14px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
+    border-radius: 15px;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &__input button {
+    font-family: $font;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 0;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 320px;
+
+    &:hover {
+      background-color: $button-hover-color;
+      transform: scale(1.05);
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      transform: scale(1);
+    }
+  }
+
+  &__display {
+    display: flex;
+    gap: 70px;
+    margin-top: 30px;
+    font-size: 50px;
+    width: 400px;
+    height: 80px;
+    justify-content: center;
+    border: solid $primary-color;
+    border-radius: 15px;
+
+    &__raw {
+      animation-duration: 2s;
+      animation-timing-function: ease-out;
+      animation-name: spin;
+      display: inline-block;
+    }
+
+    &__raw1 { animation-delay: 0.1s; }
+    &__raw2 { animation-delay: 0.2s; }
+    &__raw3 { animation-delay: 0.3s; }
+  }
+}
