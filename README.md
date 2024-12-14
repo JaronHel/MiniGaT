@@ -1,7 +1,5 @@
 ## MiniGaT Page
-
-- GitHub Page (Frontend)               `https://jaronhel.github.io/MiniGaT/`
-- Official Page (Frontend and Backend) `jaron.zapto.org`
+- Official Page `jaron.zapto.org`
 
 ## Build
 
