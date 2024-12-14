@@ -1,6 +1,8 @@
 $background-color: #222222;
 $background-color-transparent: rgba($color: $background-color, $alpha: 0.6);
+$background-color-header: rgba($color: $background-color, $alpha: 0.8);
 $primary-color: #49a1ca;
+$primary-color-transparent: rgba($color: $primary-color, $alpha: 0.2);
 $text-color: #ffffff;
 $text-color-light: #aaaaaa;
 $button-hover-color: darken($primary-color, 10%);
@@ -17,4 +19,19 @@ $font: "Mulish", sans-serif;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@mixin main-styling {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  font-family: $font;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $background-color-transparent;
+  border: 3px solid $primary-color;
+  border-radius: 15px;
 }

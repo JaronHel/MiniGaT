@@ -7,13 +7,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .main {
-  @include position;
-  color: #fff;
-  font-family: $font;
+  @include main-styling;
   width: 700px;
-  border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
-  background-color: $background-color-transparent;
-  border-radius: 15px;
   padding: 30px;
 
   & .money {

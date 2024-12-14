@@ -1,9 +1,7 @@
 @import '../../../variables.scss';
 
 .main {
-    @include position;
-    background-color: $background-color-transparent;
-    border-radius: 15px;
+    @include main-styling;
 
     & .result {
         cursor: default;
