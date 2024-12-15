@@ -7,13 +7,15 @@
         cursor: default;
         text-align: right;
         font-family: $font;
+        color: $text-color;
         font-size: 16px;
         background-color: rgba(255, 255, 255, 0.1);
         border: none;
         border-bottom: solid rgba($color: $primary-color, $alpha: 0.6);
-        width: (60px * 4);
+        width: (60px * 4 - 12px);
         height: 60px;
         margin: 10px 10px 0;
+        padding-right: 12px;
         border-radius: 15px;
 
         &:focus {
@@ -31,7 +33,7 @@
             cursor: pointer;
             font-family: $font;
             background-color: $primary-color;
-            color: white;
+            color: $text-color;
             border: none;
             font-size: 16px;
             width: 60px;

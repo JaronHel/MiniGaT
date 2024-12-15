@@ -1,24 +1,32 @@
 <div class="main">
   <!-- Result display -->
-  <input class="result" readonly>
+  <input
+    class="result"
+    [(ngModel)]="display"
+    readonly
+  />
 
   <!-- Buttons -->
   <div class="buttons">
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>*</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>-</button>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>+</button>
-    <button>±</button>
-    <button>0</button>
-    <button>,</button>
-    <button>=</button>
+    <button (click)="onRemove()">←</button>
+    <button (click)="onButton('(')">(</button>
+    <button (click)="onButton(')')">)</button>
+    <button (click)="onButton('/')">/</button>
+    <button (click)="onButton('7')">7</button>
+    <button (click)="onButton('8')">8</button>
+    <button (click)="onButton('9')">9</button>
+    <button (click)="onButton('*')">*</button>
+    <button (click)="onButton('4')">4</button>
+    <button (click)="onButton('5')">5</button>
+    <button (click)="onButton('6')">6</button>
+    <button (click)="onButton('-')">-</button>
+    <button (click)="onButton('1')">1</button>
+    <button (click)="onButton('2')">2</button>
+    <button (click)="onButton('3')">3</button>
+    <button (click)="onButton('+')">+</button>
+    <button (click)="onClear()">C</button>
+    <button (click)="onButton('0')">0</button>
+    <button (click)="onButton(',')">,</button>
+    <button (click)="onCalculate()">=</button>
   </div>
 </div>
