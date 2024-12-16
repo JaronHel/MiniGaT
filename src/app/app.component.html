@@ -14,9 +14,16 @@
   </div>
 
   <div class="search-login">
-    <form class="search" action="" method="get">
-      <input type="text" placeholder="Search..." />
-      <button class="search-button">
+    <form class="search" method="get" (submit)="onSearch()">
+      <input 
+        type="text" 
+        [(ngModel)]="searchTerm" 
+        (input)="onInputChange()" 
+        (keydown)="onKeyDown($event)"
+        placeholder="Search..." 
+        name="first"
+      />
+      <button class="search-button" type="button" (click)="onSearch()">
         <span class="material-icons">search</span>
       </button>
     </form>
@@ -24,7 +31,7 @@
     <a href="">
       <button mat-fab extended class="login-button" [disabled]="LoginDisabled">
         <mat-icon>login</mat-icon>
-        Login
+        <span>Login</span>
       </button>
     </a>
   </div>

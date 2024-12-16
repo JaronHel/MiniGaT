@@ -7,7 +7,7 @@
   padding: 30px;
   gap: 30px;
 
-  &__money {
+  & .money {
     font-size: 14px;
     padding: 10px 0;
     background-color: rgba(255, 255, 255, 0.1);
@@ -17,7 +17,7 @@
     text-align: center;
   }
 
-  &__input button {
+  & .input button {
     font-family: $font;
     background-color: $primary-color;
     color: white;
@@ -41,7 +41,7 @@
     }
   }
 
-  &__display {
+  & .display {
     display: flex;
     gap: 40px;
     font-size: 40px;
