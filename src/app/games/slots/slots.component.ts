@@ -57,10 +57,19 @@ export class SlotsComponent {
 
           setTimeout(() => {
             this.checkWinner();
-            this.btnSpinDisabled = false;
+            this.checkMoney();
           }, 250);
         }, 500);
       }, 500);
     }, 500);
+  }
+
+  private checkMoney() {
+    if (this.money < 50) {
+      this.btnSpinDisabled = true;
+    }
+    else {
+      this.btnSpinDisabled = false;
+    }
   }
 }
